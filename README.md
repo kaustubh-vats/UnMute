@@ -31,7 +31,7 @@ Unmute Assistant is a Chrome extension designed to simplify virtual meetings by 
 
 <img src="screenshots/3.png" width="100%" alt="Screenshot 2">
 
-*Green indicator means the person is unmute and speaking.*
+*Red indicator means the person is on mute and speaking.*
 
 <img src="screenshots/2.png" width="100%" alt="Screenshot 3">
 
