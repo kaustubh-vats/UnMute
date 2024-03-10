@@ -1,0 +1,41 @@
+{
+    "name": "UnMute",
+    "description": "Be informed while you are on mute or unmute",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "scripting",
+        "storage"
+    ],
+    "action": {
+        "default_title": "UnMute"
+    },
+    "host_permissions": [
+        "https://meet.google.com/*",
+        "*://*.zoom.us/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://meet.google.com/*",
+                "*://*.zoom.us/*"
+            ],
+            "js": [
+                "js/content.js"
+            ],
+            "all_frames": true
+        }
+    ],
+    "web_accessible_resources": [
+        {
+          "resources": ["css/styles.css", "js/worker.js"],
+          "matches": ["https://meet.google.com/*", "*://*.zoom.us/*"]
+        }
+    ],      
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }  
+}
