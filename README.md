@@ -10,12 +10,12 @@ Unmute Assistant is a Chrome extension designed to simplify virtual meetings by 
 
 ## Installation
 
-1. Visit the [Chrome Web Store](https://chrome.google.com/webstore) and search for "Unmute Assistant."
+1. Visit the [Chrome Web Store](https://chromewebstore.google.com/detail/unmute/imjeloehagbhnamhhkohgmiinafaeemo).
 2. Click on the "Add to Chrome" button to install the extension.
 
 ## How to Use
 
-1. After installation, join your virtual meeting on supported platforms.
+1. After installation, join your virtual meeting on supported platforms (i.e. Google meet and zoom).
 2. The visual indicator will guide you – green for unmuted, red for muted.
 3. Utilize the timer feature for effective time management during your meetings.
 
