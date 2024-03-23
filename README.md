@@ -7,6 +7,9 @@ Unmute Assistant is a Chrome extension designed to simplify virtual meetings by 
 - **Visual Mute Indicator:** A clear and bold visual cue ensures you never forget your mute status.
 - **Timer Functionality:** Keep track of your speaking time with the built-in timer.
 - **Seamless Integration:** Works seamlessly with popular video conferencing platforms, including Google Meet and Zoom.
+- **Unmute with Space Bar:**You can now unmute yourself using the space bar! Simply press and hold the space bar to unmute your microphone. Release the space bar to mute yourself again. This feature offers a convenient way to control your audio status without needing to navigate through meeting controls.
+- **Auto Time Record:**The auto time record feature automatically starts a timer when you begin speaking during a meeting. This allows you to keep track of the time you spend speaking, which can be useful for managing meeting discussions and ensuring equal participation among participants.
+- **Dark Theme:**We've added a dark theme option for users who prefer a darker interface. The dark theme not only provides a sleek and modern look but also reduces eye strain, especially during meetings in low-light environments.
 
 ## Installation
 
@@ -29,15 +32,19 @@ Unmute Assistant is a Chrome extension designed to simplify virtual meetings by 
 
 *Green indicator means the person is unmute and speaking.*
 
-<img src="screenshots/3.png" width="100%" alt="Screenshot 2">
+<img src="screenshots/5.png" width="100%" alt="Screenshot 2">
+
+*Menu expanded for setting configs.*
+
+<img src="screenshots/3.png" width="100%" alt="Screenshot 3">
 
 *Red indicator means the person is on mute and speaking.*
 
-<img src="screenshots/2.png" width="100%" alt="Screenshot 3">
+<img src="screenshots/2.png" width="100%" alt="Screenshot 4">
 
 *A custom timer draggable to anywhere in the screen.*
 
-<img src="screenshots/4.png" width="100%" alt="Screenshot 4">
+<img src="screenshots/4.png" width="100%" alt="Screenshot 5">
 
 *A custom timer draggable to anywhere in the screen.*
 

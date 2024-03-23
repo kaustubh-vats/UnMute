@@ -18,8 +18,8 @@ const getData = (data, key) => {
     }
     return data[key];
 }
-const getOrDefault = (url, data) => {
-    return getData(data, getKey(url)) || getData(data, "default");
+const getOrDefault = (key, data) => {
+    return getData(data, getKey(key)) || getData(data, "default");
 }
 
 window.addEventListener("message", (e) => {
@@ -37,6 +37,16 @@ window.addEventListener("message", (e) => {
                     // do nothing
                 });
             })
+        } else if(data.message === 'UNMUTE_UPDATE_TIMER_THEME') {
+            chrome.storage.local.set({'darkTheme': data.value === true}, function() {
+            });
+        } else if(data.message === 'UNMUTE_UPDATE_TIMER_UNMUTE_ON_SPACE') {
+            chrome.storage.local.set({'spaceShortcut': data.value === true}, function() {
+            });
+
+        } else if(data.message === 'UNMUTE_UPDATE_TIMER_AUTO_RECORD') {
+            chrome.storage.local.set({'autoTimer': data.value === true}, function() {
+            });
         }
     } catch(e) {}
 })
@@ -52,7 +62,7 @@ const removeScript = () => {
     }
 }
 
-const createScript = (data) => {
+const createScript = (data, darkTheme, autoTimer, spaceShortcut) => {
     if(getScript()) {
         return;
     }
@@ -61,14 +71,17 @@ const createScript = (data) => {
     const script = document.createElement('script');
     script.setAttribute('data-cssurl', cssUrl);
     script.setAttribute('id', SCRIPT_ID);
-    script.setAttribute('src', chrome.runtime.getURL('js/worker.js'));
+    script.setAttribute('src', chrome.runtime.getURL('js/unmute.js'));
     script.setAttribute('data-timerx', filteredData?.x);
     script.setAttribute('data-timery', filteredData?.y);
+    script.setAttribute('data-autoTimer', autoTimer === true);
+    script.setAttribute('data-spaceShortcut', spaceShortcut === true);
+    script.setAttribute('data-darkTheme', darkTheme === true);
     document.body.appendChild(script);
 }
 
 try {
-    chrome.storage.local.get(['timerCoords'], function(data) {
-        createScript(data.timerCoords);
+    chrome.storage.local.get(['timerCoords', 'darkTheme', 'autoTimer', 'spaceShortcut'], function(data) {
+        createScript(data.timerCoords, data.darkTheme, data.autoTimer, data.spaceShortcut);
     })
 } catch (e) { }

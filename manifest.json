@@ -27,7 +27,7 @@
     ],
     "web_accessible_resources": [
         {
-          "resources": ["css/styles.css", "js/worker.js"],
+          "resources": ["css/styles.css", "js/unmute.js"],
           "matches": ["https://meet.google.com/*", "*://*.zoom.us/*"]
         }
     ],      
