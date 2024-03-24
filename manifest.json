@@ -1,7 +1,7 @@
 {
     "name": "UnMute",
     "description": "Be informed while you are on mute or unmute",
-    "version": "1.0",
+    "version": "1.0.2",
     "manifest_version": 3,
     "permissions": [
         "storage"

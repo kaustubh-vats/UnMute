@@ -17,8 +17,8 @@ const UPDATE_UNMUTE_ON_SPACE_MESSAGE = 'UNMUTE_UPDATE_TIMER_UNMUTE_ON_SPACE';
 const UPDATE_AUTO_RECORD_MESSAGE = 'UNMUTE_UPDATE_TIMER_AUTO_RECORD';
 
 const removeUnmuteListenerOnSpace = () => {    
-    document.removeEventListener('keydown', onKeyDown);
-    document.removeEventListener('keyup', onKeyUp);
+    document.removeEventListener('keydown', onKeyDown, true);
+    document.removeEventListener('keyup', onKeyUp, true);
 }
 
 const attachUnmuteListenerOnSpace = () => {
@@ -477,7 +477,11 @@ class Timer {
         }
         function clickHandler(event) {
             const source = event?.target;
-            if(source && menuContainer && (menuContainer === source || menuContainer.contains(source))) {
+            if(source && 
+                (menuContainer && (menuContainer === source || menuContainer.contains(source))) || 
+                (startBtn && (startBtn === source || startBtn.contains(source))) ||
+                (resetBtn && (resetBtn === source || resetBtn.contains(source)))
+            ) {
                 return;
             }
             timerContainer.classList.toggle('expanded-menu');
